@@ -40,7 +40,52 @@
     mix-blend-mode: screen;
 }
 
+ 
         </style>
+
+        <!-- Floating Audio Control Button -->
+<div id="audioControl" style="
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #f87171;
+color: white;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+z-index: 9999;
+border: 2px solid black;
+animation: blink 1s infinite; /* Apply blinking animation */
+">
+
+<i class="fa fa-volume-up" id="audioIcon"></i>
+</div>
+
+<!-- Add the Blinking Animation to CSS -->
+<style>
+@keyframes blink {
+    0% {
+        opacity: 1;
+        border: 2px solid green;
+    }
+    50% {
+        opacity: 0;
+        border: 2px solid green;
+
+    }
+    100% {
+        opacity: 1;
+        border: 2px solid green;
+
+    }
+}
+</style>
+
         <!-- Facebook Meta Tags -->
         <meta property="og:url" content="https://einvitation.github.io/Avinash-weds-Shilpa/">
         <meta property="og:type" content="website">
@@ -179,6 +224,26 @@
                     
                 </div>
             </section>
+            <!-- Floating Audio Control Button -->
+<div id="audioControl" style="
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #f87171;
+color: white;
+border-radius: 50%;
+width: 50px;
+height: 50px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+z-index: 9999;
+">
+<i class="fa fa-volume-up" id="audioIcon"></i>
+</div>
+
         </main>
        <script src="assets/js/plugins.min.js"></script>
         <script src="assets/js/custom.min.js"></script>
@@ -316,6 +381,28 @@
                   }
                 });
               </script>
+
+<script>
+    const audio = document.getElementById('bgAudio');
+    const audioControl = document.getElementById('audioControl');
+    const audioIcon = document.getElementById('audioIcon');
+
+    let isPlaying = true;
+
+    audioControl.addEventListener('click', () => {
+        if (isPlaying) {
+            audio.pause();
+            audioIcon.classList.remove('fa-volume-up');
+            audioIcon.classList.add('fa-volume-mute');
+        } else {
+            audio.play();
+            audioIcon.classList.remove('fa-volume-mute');
+            audioIcon.classList.add('fa-volume-up');
+        }
+        isPlaying = !isPlaying;
+    });
+</script>
+
               
     
     </body>
