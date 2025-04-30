@@ -140,7 +140,7 @@ table th, table td {
 }
 .section {
     width: 100%;
-    padding: 100px 0;
+    padding: 20px 0;
     position: relative;
     
 }
@@ -529,7 +529,6 @@ figure.rituals {
 }
 .hide{display: none !important;}
 .note{
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
